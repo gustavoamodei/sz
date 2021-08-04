@@ -1,0 +1,126 @@
+﻿@model sz.Models.Simulacao
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Simulacao</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeSimulacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomeSimulacao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ml_por_cento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ml_por_cento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ml_oleo_essencial)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ml_oleo_essencial)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lucro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lucro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco_Parcial)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Preco_Parcial)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Margem_lucro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Margem_lucro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cliente)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cliente.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Frasco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Frasco.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Acessorio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Acessorio.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SimulOB)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Nome do Oleo Base</th>
+                </tr>
+                @foreach (var item in Model.SimulOB)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OleoBaseId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OleoBase.Nome)
+                        </td>
+
+                    </tr>
+                }
+            </table>
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SimulOE)
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Nome do Oleo Essencial</th>
+                </tr>
+                @foreach (var item in Model.SimulOE)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OleoEssencialId )
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OleoEssencial.Nome)
+                        </td>
+
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
